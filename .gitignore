@@ -1,0 +1,16 @@
+#Node Logs
+*.Logs
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+#npm cache directory
+.npm
+
+#REPL history
+.node_repl_history
+
+#config.json file with server info
+.config/config.json
