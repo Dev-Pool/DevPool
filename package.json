@@ -1,0 +1,25 @@
+{
+  "name": "devpool",
+  "version": "1.0.0",
+  "description": "\"App for Developers to find jobs!\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-Pool/DevPool.git"
+  },
+  "author": "\"Corey Mitchell, V'ana Abbot, Casey Monroe, Chris Black\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dev-Pool/DevPool/issues"
+  },
+  "homepage": "https://github.com/Dev-Pool/DevPool#readme",
+  "dependencies": {
+    "mysql2": "^1.6.1",
+    "nuxt": "^1.4.2",
+    "sequelize": "^4.38.1"
+  }
+}
