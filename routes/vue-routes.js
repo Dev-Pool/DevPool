@@ -1,10 +1,22 @@
-//Dependencies 
-const path = require("path");
+import Vue from 'vue'
+import Router from 'vue-router'
+import Products from '@../views/components/Products'
 
-//Routes
-module.exports = app => {
-    app.get("/", (req, res) {
-        res.sendFile(path.join(__dirname, "../public/index.html"))
-});
+Vue.use(Router)
 
-}
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      name: 'Products',
+      component: Products
+    }
+  ]
+})
+
+new Vue ({
+    el: '#app',
+    router, 
+    template:'<App/>',
+    components: {App}
+})

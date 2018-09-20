@@ -18,7 +18,7 @@ app.use(express.static('public'));
 //-----------------------------------
 
 //syncing sequelize models and starting Express
-db.sequelize.sync({force: true}).then(()=>{
+db.sequelize.sync({}).then(()=>{
     app.listen(PORT, ()=>{
         console.log(`App listening on PORT ${PORT}`);
     });
