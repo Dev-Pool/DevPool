@@ -1,2 +1,9 @@
 CREATE DATABASE jobbies;
 USE jobbies;
+
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    title VARCHAR(255),
+    body VARCHAR(255),
+    createdAt TIMESTAMP NOT NULL
+);
