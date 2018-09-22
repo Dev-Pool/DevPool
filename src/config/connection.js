@@ -7,7 +7,7 @@ if (process.env.JAWSDB_URL) {
     //dis her 4 local runnins... ok?  swiper no swiping!
     connection = mysql.createConnection({
         host: "localhost",
-        port: 3306,
+        port: 9090,
         user: "root",
         password: "password",
         database: "jobbies"
