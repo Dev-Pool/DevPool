@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
-//we'll need to require the routes here
-
+//Requiring routes for the server
+require("./routes/html-routes.js")(app);
 //-----------------------------------
 
 //syncing sequelize models and starting Express
