@@ -13,7 +13,9 @@ window.addEventListener("load", function () {
     // This checks to see if there is already a token available in the local storage.
     // If so, it is deleted. The function then opens the linkedin auth page.
     const checkforToken = () => {
-        const linkedinWindow = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=http://localhost:9090/success&scope=r_basicprofile&response_type=token`;
+        const uri_Redirect = ['http://localhost:9090/success'];
+        const scope = 'r_basicprofile';
+        const linkedinWindow = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=${uri_Redirect[0]}&scope=${scope}&response_type=token`;
         if (!localStorage.getItem("linkedinAPItoken") === null) {
             localStorage.removeItem("linkedinAPItoken");
             localStorage.removeItem("linkedinExpiresIn");
