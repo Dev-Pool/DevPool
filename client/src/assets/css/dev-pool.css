@@ -10,7 +10,7 @@
  */
 body {
     line-height: 1.7em;
-    color: #7f8c8d;
+    color:white;
     font-size: 13px;
 }
 
@@ -21,7 +21,7 @@ h4,
 h5,
 h6,
 label {
-    color: #34495e;
+    color: white;
 }
 
 .pure-img-responsive {
@@ -71,7 +71,7 @@ label {
  * I want my pure-button elements to look a little different
  */
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: #04263d;
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
@@ -133,11 +133,11 @@ a.pure-button-primary {
 
 .splash-container {
     background: #1f8dd6;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    height: 88%;
+    height: 100%;
     top: 0;
     left: 0;
     position: fixed !important;
@@ -179,26 +179,44 @@ a.pure-button-primary {
  */
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 87%;
+    /* z-index: 2; */
+    background: #1f8dd6;
+    overflow: hidden;
+    /* The following styles are required for the "scroll-over" effect */
     width: 100%;
-    min-height: 12%;
-    z-index: 2;
-    background: white;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed !important;
 
 }
 
 /* We want to give the content area some more padding */
 .content {
     padding: 1em 1em 3em;
+     width: 80%;
+    height: 100%; 
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* This is the class used for the main content headers (<h2>) */
 .content-head {
-    font-weight: 400;
+    /* font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin: 2em 0 1em;
+    margin: 2em 0 1em; */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: 3px solid white;
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
 }
 
 /* This is a modifier class used when the content-head is inside a ribbon */
@@ -208,7 +226,7 @@ a.pure-button-primary {
 
 /* This is the class used for the content sub-headers (<h3>) */
 .content-subhead {
-    color: #1f8dd6;
+    color: white;
 }
     .content-subhead i {
         margin-right: 7px;
