@@ -1,5 +1,6 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router from 'vue-router'om '@/components/Test'
+=======
 import Main from '@/components/Main'
 import SignUp from '@/components/SignUp'
 import Jobs from '@/components/Jobs'
