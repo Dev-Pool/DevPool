@@ -1,5 +1,5 @@
 // Exchanges LinkedIn auth code for an access token
-window.addEventListener('load', function () {
+$(document).ready(()=>{
     // Targets the auth code given by the linkedin confirmation.
     const authCode = window.location.search.substr(1);
 
@@ -12,25 +12,23 @@ window.addEventListener('load', function () {
         method: 'POST',
         url: `https://cors-escape.herokuapp.com/${tokenURL}`,
         headers: {
-        "Access-Control-Allow-Origin": "*"
+            "Allow-Control-Access-Origin": "*"
         }
     }).then((res)=>{
         // console.log(res.access_token, res.expires_in);
+        console.log(res);
 
-        // Storing the object in the local storage. For now!
+        // Will need to store the tokens somewhere for easy access.
+        // As of right now, they are stored in localStorage below. But that isn't safe.
+        // We need to place them in the database or somewhere on the server.
+
         localStorage.setItem('Access_token', res.access_token);
         localStorage.setItem('Expires_in', res.expires_in);
 
-    })
+        // =======================================================
 
-    // Will need to store the tokens somewhere for easy access.
-    // As of right now, they are stored in localStorage above. But that isn't safe.
-    // We need to place them in the database or somewhere on the server.
-
-
-    // =======================================================
-
-    // Closes window once everything is done.
-    window.close();
+        // Closes window once everything is done.
+        window.close();
+    });
 
 });
