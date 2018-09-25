@@ -11,7 +11,7 @@ const db = require('./models');
 //setting up Express app to handle data parsing
 app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + '/client'));
+app.use(express.static('../client'));
 
 //Requiring routes for the server
 require("./routes/html-routes.js")(app);

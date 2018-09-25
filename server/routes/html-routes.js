@@ -5,7 +5,7 @@ const path = require("path");
 module.exports = app => {
     // html file "index" in client
     app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '../../client/index.html'));
+        res.sendFile(path.join(__dirname, '/index.html'));
     });
 
     //html file for Corey's linkedin route
