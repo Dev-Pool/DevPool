@@ -27,6 +27,7 @@
     "nodemon": "^1.18.4",
     "nuxt": "^1.4.2",
     "sequelize": "^4.38.1",
+    "url-loader": "^1.1.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   }

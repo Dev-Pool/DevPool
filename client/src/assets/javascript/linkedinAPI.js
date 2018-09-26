@@ -1,10 +1,3 @@
-// LinkedIn authorization and LinkedIn api calls
-
-
-
-// =====================================================================
-
-
 // LinkedIn API Call
 
 // Was told to keep it in vanilla js as to not interfere with Vue. 

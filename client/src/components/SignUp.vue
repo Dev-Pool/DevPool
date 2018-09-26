@@ -37,19 +37,20 @@
               <fieldset>
 
                 <label for="name">Your Name</label>
-                <input id="name" type="text" placeholder="John Doe">
+                <input id="name" type="text" placeholder="John Doe" required />
 
 
                 <label for="email">Your Email</label>
-                <input id="email" type="email" placeholder="john.doe@gmail.com">
+                <input id="email" type="email" placeholder="john.doe@gmail.com" required />
 
                 <label for="password">Your Password</label>
-                <input id="password" type="password" placeholder="Example12#">
+                <input id="password" type="password" placeholder="Example12#" required />
 
-                <button type="submit" class="pure-button">Submit</button>
+                <button type="submit" class="pure-button" id="submitBtn" v-on:click="post()">Submit</button>
 
-                <button v-on:click="windowTrigger('https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=http://localhost:8080/success&state=remberthisstring&scope=r_basicprofile%20r_emailaddress', 'linkedinAuth')" id="LISignIn"><img src="../../src/assets/images/Default.png"></button>
-              
+                <div id="LIButton">
+                  <img v-on:click="imgActive(), windowTrigger('https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=http://localhost:9090/success&state=remberthisstring&scope=r_basicprofile%20r_emailaddress', 'linkedinAuth')" v-on:mouseover="imgHoverOn()" v-on:mouseleave="imgHoverOff()" id="LISignIn" src='https://user-images.githubusercontent.com/37916145/46070629-e7c1af80-c143-11e8-9e7c-fb4c85e0b7ff.png' data-default='https://user-images.githubusercontent.com/37916145/46070629-e7c1af80-c143-11e8-9e7c-fb4c85e0b7ff.png' data-active='https://user-images.githubusercontent.com/37916145/46070701-0de74f80-c144-11e8-8936-3476e5f2c67e.png' data-hover='https://user-images.githubusercontent.com/37916145/46070728-1e97c580-c144-11e8-977f-d8b19182fa87.png' alt="LinkedIn Sign In">
+                </div>
               </fieldset>
             </form>
           </div>
@@ -90,8 +91,35 @@
       }
     },
     methods: {
+      // Targets form values to add to database.
+      post: (event)=>{
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+
+        console.log(name.value, email.value, password.value);
+      },
+      // Opens Window for LinkedIn Auth.
       windowTrigger: (url, windowName) => {
         open(url, windowName, 'height=550px width=400px');
+      },
+      // Changes Linkedin Button Img src when hovered over.
+      imgHoverOn: ()=>{
+        const img = document.getElementById("LISignIn");
+        const hover = img.getAttribute("data-hover");
+        const state = img.setAttribute("src", hover);
+      },
+      // Changes back Linkedin button img src when hover stops.
+      imgHoverOff: ()=>{
+        const img = document.getElementById("LISignIn");
+        const hover = img.getAttribute("data-default");
+        const state = img.setAttribute("src", hover);
+      },
+      // Changes Linkedin Button Img src when active.
+        imgActive: ()=>{
+        const img = document.getElementById("LISignIn");
+        const active = img.getAttribute("data-active");
+        const state = img.setAttribute("src", active);
       }
     }
   };
