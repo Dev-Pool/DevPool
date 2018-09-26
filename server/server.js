@@ -16,6 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static('../client'));
 
 //Requiring routes for the server
+require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 //-----------------------------------
 
