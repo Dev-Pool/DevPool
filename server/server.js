@@ -1,8 +1,10 @@
 //dependencies for app
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 //setting up express app
 const app = express();
+app.use(cors());
 let PORT = process.env.PORT || 9090;
 //requiring models
 
@@ -18,7 +20,7 @@ require("./routes/html-routes.js")(app);
 //-----------------------------------
 
 //syncing sequelize models and starting Express
-db.sequelize.sync({}).then(()=>{
+db.sequelize.sync({force: true}).then(()=>{
     app.listen(PORT, ()=>{
         console.log(`App listening on PORT ${PORT}`);
     });

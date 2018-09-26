@@ -1,9 +1,5 @@
 // LinkedIn authorization and LinkedIn api calls
 
-// LinkedIn API test
-document.getElementById('API').addEventListener('click', ()=>{
-    linkedinAPI();
-});
 
 
 // =====================================================================

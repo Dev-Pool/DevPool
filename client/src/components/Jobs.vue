@@ -3,9 +3,9 @@
     <!--This is the header with buttons for "Available Jobs", "Sign Up", etc.-->
     <div class="header">
       <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
- 
+
         <router-link to="/">
-        <a class="pure-menu-heading">Dev-Pool</a>
+          <a class="pure-menu-heading">Dev-Pool</a>
         </router-link>
 
         <ul class="pure-menu-list">
@@ -19,7 +19,7 @@
           </router-link>
 
           <router-link to="SignUp">
-          <li class="pure-menu-item"><a class="pure-menu-link">Sign Up</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link">Sign Up</a></li>
           </router-link>
 
 
@@ -55,7 +55,7 @@
           <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
               <i class="fa"></i>
-              Dang Ole More Stuff 
+              Dang Ole More Stuff
             </h3>
             <p>
               Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
@@ -81,13 +81,22 @@
 </template>
 
 <script>
+  import axios from "axios"
   export default {
     name: 'Jobs',
     data() {
       return {
 
       }
+
+    },
+
+    created() {
+      axios.get('http://localhost:9090/dangit').then(res => {
+        console.log(res)
+      });
     }
+
   }
 
 </script>
