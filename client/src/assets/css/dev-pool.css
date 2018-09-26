@@ -246,6 +246,16 @@ a.pure-button-primary {
     width: 100%;
 }
 
+/* LinkedIn Button */
+#LISignIn {
+    position: relative;
+    top: 20px;
+    height: 41px;
+    border-radius: 10px;
+    border: 0px;
+    padding: 0px;
+}
+
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
  * On tablets and other medium-sized devices, we want to customize some

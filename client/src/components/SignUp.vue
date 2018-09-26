@@ -47,6 +47,9 @@
                 <input id="password" type="password" placeholder="Example12#">
 
                 <button type="submit" class="pure-button">Submit</button>
+
+                <button v-on:click="windowTrigger('https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=http://localhost:8080/success&state=remberthisstring&scope=r_basicprofile%20r_emailaddress', 'linkedinAuth')" id="LISignIn"><img src="../../src/assets/images/Default.png"></button>
+              
               </fieldset>
             </form>
           </div>
@@ -85,8 +88,14 @@
       return {
 
       }
+    },
+    methods: {
+      windowTrigger: (url, windowName) => {
+        open(url, windowName, 'height=550px width=400px');
+      }
     }
-  }
+  };
+
 
 </script>
 
