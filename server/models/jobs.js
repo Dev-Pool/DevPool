@@ -14,9 +14,9 @@ module.exports = function(sequelize, DataTypes) {
           len: [1]
         }
       },
-      category: {
-        type: DataTypes.STRING,
-        defaultValue: "Personal"
+      applied: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: null
       }
     });
     return Job;

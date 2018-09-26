@@ -1,0 +1,1 @@
+INSERT INTO jobs (title, body) values ('Front End Dev', 'Dis her dang ole job yo.');
