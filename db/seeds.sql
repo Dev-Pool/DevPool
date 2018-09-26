@@ -1,1 +1,1 @@
-INSERT INTO jobs (title, body) values ('Front End Dev', 'Dis her dang ole job yo.');
+INSERT INTO `jobbies`.`jobs` (`id`, `title`, `body`, `applied`, `createdAt`, `updatedAt`) VALUES ('1', 'Head Bobby', 'jobs', 0, current_timestamp(), current_timestamp());

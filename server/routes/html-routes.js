@@ -13,8 +13,8 @@ module.exports = app => {
           });
     });
 
-    //html file for Corey's linkedin route
-//     app.get('/success', (req, res) => {
-//         res.sendFile(path.join(__dirname, '../../client/success.html'));
-//     });
+    // html file for Corey's linkedin route
+    app.get('/success', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/success.html'));
+    });
 }; 
