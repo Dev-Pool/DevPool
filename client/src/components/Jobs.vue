@@ -43,7 +43,7 @@
               Job#1 Description
             </p>
           </div>
-          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
               <i class="fa"></i>
               This can be other stuff
@@ -51,8 +51,8 @@
             <p>
               Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
             </p>
-          </div>
-          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          </div> -->
+          <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
               <i class="fa"></i>
               Dang Ole More Stuff
@@ -60,8 +60,8 @@
             <p>
               Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
             </p>
-          </div>
-          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+          </div> -->
+          <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
               <i class="fa"></i>
               There's so much room for activities!!!
@@ -69,7 +69,7 @@
             <p>
               Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

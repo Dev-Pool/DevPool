@@ -5,22 +5,6 @@ const db = require("../models/index");
 //routes
 module.exports = app => {
     // html file "index" in client
-<<<<<<< HEAD
-    app.get('/', (req, res) => {
-
-        db.Jobs.findAll({}).then(function (dbJobs) {
-            // We have access to the todos as an argument inside of the callback function
-            res.json(dbJobs);
-        });
-
-    });
-
-    // html file for Corey's linkedin route
-    app.get('/success', (req, res) => {
-        res.sendFile(path.join(__dirname, '../../client/success.html'))
-    });
-};
-=======
     app.get('/dangit', (req, res) => {
         console.log("Dang it Bobby")
         db.Job.findAll({}).then(function (dbJobs) {
@@ -29,9 +13,8 @@ module.exports = app => {
           });
     });
 
-    //html file for Corey's linkedin route
-//     app.get('/success', (req, res) => {
-//         res.sendFile(path.join(__dirname, '../../client/success.html'));
-//     });
+    // html file for Corey's linkedin route
+    app.get('/success', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/success.html'));
+    });
 }; 
->>>>>>> 31ae0c72ffde96db040452f6b71ae1d7b8821641
