@@ -20,5 +20,4 @@ Once the jobs are supplied, allow the user to skip through them or instantly app
 * **Casey Moore** - *Initial work* - [CaseyMoore](https://github.com/Monroe89)
 * **Chris Black** - *Initial work* - [ChrisBlack](https://github.com/ChrisLBlack)
 * **Corey Mitchell** - *Initial work* - [CoreyMitchell](https://github.com/corey-mitchell)
-* **John Desseau** - *Initial work* - [John Desseau]()
 * **V'Ana Abbott** - *Initial work* - [VAvaAbbott](https://github.com/vana-abbott)
