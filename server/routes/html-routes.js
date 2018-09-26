@@ -13,7 +13,22 @@ module.exports = app => {
           });
     });
 
-    //html file for Corey's linkedin route
+    // Creating Users
+    app.post('/user', (req, res)=>{
+        console.log (req.body);
+
+        // db.User.create({
+
+        // }).then((response)=>{
+        //     console.log(response);
+        //     // res.json(response);
+        // })
+    })
+
+
+    
+
+    //html file for Linkedin route
     app.get('/success', (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/success.html'));
     });
