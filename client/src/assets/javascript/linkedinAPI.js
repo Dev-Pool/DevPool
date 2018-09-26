@@ -1,22 +1,5 @@
 // LinkedIn authorization and LinkedIn api calls
 
-
-// Link to linkedin's auth page
-const linkedinWindow = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78k0z5io5whh5e&redirect_uri=http://localhost:9090/success&state=remberthisstring&scope=r_basicprofile%20r_emailaddress`;
-
-// Opens a new window to linkedin auth page and makes sure it's in focus.
-const windowTrigger = (url, windowName) => {
-    const newWindow = open(url, windowName, 'height=550px width=400px');
-    if (window.focus) {
-        newWindow.focus();
-    }
-};
-
-// Starts linkedin auth process
-document.getElementById('signIn').addEventListener('click', ()=>{
-    windowTrigger(linkedinWindow, 'LinkedIn Auth');
-});
-
 // LinkedIn API test
 document.getElementById('API').addEventListener('click', ()=>{
     linkedinAPI();
@@ -31,12 +14,11 @@ document.getElementById('API').addEventListener('click', ()=>{
 // Was told to keep it in vanilla js as to not interfere with Vue. 
 // That's why the api calls are much more complex than they need to be.
 
-
-// Creates new API request
-const request = new XMLHttpRequest();
-
 // Retrieves information from LinkedIn
-const linkedinAPI = function() {
+const linkedinAPI = function() { 
+    // Creates new API request
+    const request = new XMLHttpRequest();
+
     // Opens request to linkedin's api
     request.open('GET', 'https://cors-escape.herokuapp.com/https://api.linkedin.com/v1/people/~:(id,first-name,last-name,picture-url,headline,summary,email-address)?format=json', true);
     
