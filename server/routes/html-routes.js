@@ -1,6 +1,5 @@
 //dependencies
 const path = require("path");
-const db = require("../models/index");
 
 //routes
 module.exports = app => {
