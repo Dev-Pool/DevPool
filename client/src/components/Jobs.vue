@@ -36,24 +36,17 @@
         <div class="content is-center">
           <div class="l-box pure-u-1" id="jobPosts">
         
-            <h3 class="content-subhead is-center">
+            <h3 id="companyName" class="content-subhead is-center">
               <i class="fa"></i>
-              Job#1 Company Name
             </h3>
-            <p>
-              Job#1 Description
-            </p>
-      
-            <h3 class="content-subhead">
+            <h3 id='title' class="content-subhead">
               <i class="fa"></i>
-              This can be other stuff
             </h3>
-            <p>
-              Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+            <p id='jobDescription'>
             </p>
              <!-- dis here buttons for yes'in or no'in bruh -->
-            <button class="button-success pure-button" id="no">Nah</button>
-            <button class="button-success pure-button" id="yes">Apply!</button>
+            <button v-on:click='nextJob()' class="button-success pure-button" id="no">Nah</button>
+            <button v-on:click='nextJob()' class="button-success pure-button" id="yes">Apply!</button>
           </div>
           <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
@@ -89,17 +82,57 @@
     name: 'Jobs',
     data() {
       return {
-
       }
-
     },
-
+    // On load this will display the info for the first company,
+    // After every click it will display next job
     created() {
-      axios.get('http://localhost:9090/dangit').then(res => {
-        console.log(res)
+      // Loads first company
+      let job = 0;
+      axios.get('http://localhost:9090/api/jobs/:id').then(res => {
+        // console.log(company, title, body);
+        let company = res.data[job].company;
+        let title = res.data[job].title;
+        let body = res.data[job].body;
+
+        // Displays first company in divs
+        document.getElementById('companyName').appendChild(document.createTextNode(company));
+        document.getElementById('title').appendChild(document.createTextNode(title));
+        document.getElementById('jobDescription').appendChild(document.createTextNode(body));
+        
+        // Displays next job on yes button click... Needs to also change applied to true in DB.
+        document.getElementById("yes").addEventListener('click', (event)=>{
+          // Adds one to the current job
+          job++
+          // Reassigns variables to the current job
+          company = res.data[job].company;
+          title = res.data[job].title;
+          body = res.data[job].body;
+
+          // console.log(company,'\n', title,'\n', body);
+          // Replaces text with new company
+          document.getElementById('companyName').innerHTML = company;
+          document.getElementById('title').innerHTML = title;
+          document.getElementById('jobDescription').innerText = body;
+        });
+
+        // Displays next job on no button click... Needs to also change applied to false in DB.
+        document.getElementById("no").addEventListener('click', (event)=>{
+          // Adds one to the current job
+          job++
+          // Reassigns variables to the current job
+          company = res.data[job].company;
+          title = res.data[job].title;
+          body = res.data[job].body;
+
+          // Replaces text with new company
+          document.getElementById('companyName').innerHTML = company;
+          document.getElementById('title').innerHTML = title;
+          document.getElementById('jobDescription').innerText = body;
+        });
+
       });
     }
-
   }
 
 </script>
