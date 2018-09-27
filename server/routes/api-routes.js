@@ -1,12 +1,11 @@
 // Dependencies
-const path = require("path");
-const db = require("../models/index");
+const db = require("../models");
 
 // Routes
 module.exports = app => {
     // Test route
     app.get('/dangit', (req, res) => {
-        console.log("Dang it Bobby")
+        console.log("Dang it Bobby");
         db.Job.findAll({}).then(function (dbJobs) {
             // We have access to the todos as an argument inside of the callback function
             res.json(dbJobs);
@@ -14,15 +13,35 @@ module.exports = app => {
     });
 
     // Creating Users
-    app.post('/user', (req, res)=>{
-        console.log (req.body);
+    app.post('/api/user', (req, res)=>{
+        // console.log (req.body);
 
-        // db.User.create({
-
-        // }).then((response)=>{
-        //     console.log(response);
-        //     // res.json(response);
-        // });
+        // Checks for current email address in DB.
+        // If exist, don't do anything.
+        function isIdUnique (email) {
+            return db.User.findAll({ where: { email: email } })
+              .then(count => {
+                if (count != 0) {
+                  return false;
+                } else {
+                    return true;
+                }
+            });
+        }
+        
+        // If email does not exist in DB, add user info from linkedin
+        isIdUnique(req.body.email).then(isUnique => {
+            if (isUnique === true) {
+                db.User.create({
+                    name: req.body.name,
+                    email:req.body.email,
+                    password: req.body.password,
+                    imageURL: req.body.imageURL
+                }).then((response)=>{
+                    res.json(response);
+                });
+            }
+        });
     });
 
 };
