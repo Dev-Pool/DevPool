@@ -3,9 +3,10 @@ const db = require("../models");
 
 // Routes
 module.exports = app => {
-    // Test route
-    app.get('/api/jobs', (req, res) => {
-        db.Job.findAll({attributes: ['company', 'title', 'body', 'applied']}).then(function (dbJobs) {
+    // Jobs route
+    app.get('/api/jobs/:id', (req, res) => {
+        // console.log(req.params);
+        db.Job.findOne({attributes: ['id', 'company', 'title', 'body', 'applied']}).then(function (dbJobs) {
             // We have access to the todos as an argument inside of the callback function
             res.json(dbJobs);
           });
