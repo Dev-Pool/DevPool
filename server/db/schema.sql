@@ -5,6 +5,7 @@ USE jobbies;
 -- Table for Job Information
 CREATE TABLE jobs (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    company VARCHAR(255),
     title VARCHAR(255),
     body VARCHAR(255),
     applied BOOLEAN DEFAULT NULL,
