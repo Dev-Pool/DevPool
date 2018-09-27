@@ -1,5 +1,4 @@
 {
-
   "name": "devpool",
   "version": "1.0.0",
   "description": "\"App for Developers to find jobs!\"",
@@ -22,6 +21,7 @@
   },
   "homepage": "https://github.com/Dev-Pool/DevPool#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "concurrently": "^4.0.1",
     "cors": "^2.8.4",
     "mysql2": "^1.6.1",
@@ -32,5 +32,4 @@
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   }
-
 }

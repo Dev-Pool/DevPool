@@ -8,8 +8,8 @@ module.exports = app => {
         res.sendFile(path.join(__dirname, '../../client/index.html'));
     });
 
-    // //html file for Linkedin route
-    // app.get('/success', (req, res) => {
-    //     res.sendFile(path.join(__dirname, '../../client/success.html'));
-    // });
+    //html file for Linkedin route
+    app.get('/success', (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/success.html'));
+    });
 }; 
