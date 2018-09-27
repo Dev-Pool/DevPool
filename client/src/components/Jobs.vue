@@ -31,19 +31,19 @@
     <div class="content-wrapper">
       <div class="content">
         <h2 class="content-head is-center">Available Jobs Near You</h2>
-
-        <div class="pure-g">
-          <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-            <h3 class="content-subhead">
+        <br>
+        <br>
+        <div class="content is-center">
+          <div class="l-box pure-u-1" id="jobPosts">
+        
+            <h3 class="content-subhead is-center">
               <i class="fa"></i>
               Job#1 Company Name
             </h3>
             <p>
               Job#1 Description
             </p>
-          </div>
-          <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+      
             <h3 class="content-subhead">
               <i class="fa"></i>
               This can be other stuff
@@ -51,7 +51,10 @@
             <p>
               Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
             </p>
-          </div> -->
+             <!-- dis here buttons for yes'in or no'in bruh -->
+            <button class="button-success pure-button" id="no">Nah</button>
+            <button class="button-success pure-button" id="yes">Apply!</button>
+          </div>
           <!-- <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
             <h3 class="content-subhead">
               <i class="fa"></i>
@@ -102,7 +105,24 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
+  .button-success {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
 
+  #yes {
+    background: rgb(28, 184, 65);
+    /* this is a green */
+  }
+
+  #no {
+    background: rgb(202, 60, 60);
+    /* this is a maroon */
+  }
+  #jobPosts {
+    margin-top: 5%;
+  }
 
 </style>
