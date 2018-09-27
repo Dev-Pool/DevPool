@@ -6,7 +6,7 @@ module.exports = app => {
     // Jobs route
     app.get('/api/jobs/:id', (req, res) => {
         // console.log(req.params);
-        db.Job.findOne({attributes: ['id', 'company', 'title', 'body', 'applied']}).then(function (dbJobs) {
+        db.Job.findAll({attributes: ['id', 'company', 'title', 'body', 'applied']}).then((dbJobs) => {
             // We have access to the todos as an argument inside of the callback function
             res.json(dbJobs);
           });
